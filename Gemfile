@@ -37,6 +37,8 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
 
  gem 'bcrypt'
+ 
+ gem 'pundit'
 
 
  

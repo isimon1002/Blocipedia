@@ -5,9 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  before_save { self.email = email.downcase }
+  #before_save { self.email = email.downcase }
   #before_save { self.role ||= :standard }
-  after_create :send_user_emails
+  #after_create :send_user_emails
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   

@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   
   before_save { self.email = email.downcase }
-  before_save { self.role ||= :standard }
+  #before_save { self.role ||= :standard }
   after_create :send_user_emails
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   private
 
-  def send_user_emails
-    UserMailer.new_user(self).deliver_now
-  end
+  #def send_user_emails
+   # UserMailer.new_user(self).deliver_now
+  #end
 end

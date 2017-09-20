@@ -37,9 +37,12 @@ source 'https://rubygems.org'
  gem 'bootstrap-sass'
 
  gem 'faker'
+ 
  gem 'bcrypt'
  
  gem 'pundit'
+ 
+ gem 'stripe'
 
 
  

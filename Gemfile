@@ -43,6 +43,8 @@ source 'https://rubygems.org'
  gem 'pundit'
  
  gem 'stripe'
+ 
+ gem 'redcarpet'
 
 
  

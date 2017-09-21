@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   get 'charges/downgrade'
   post 'charges/downgrade' 
+  get 'charges/validate'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "welcome#index"

@@ -37,8 +37,16 @@ class ChargesController < ApplicationController
    end
    
   def downgrade
+   @user = current_user
    current_user.standard!
    flash[:alert] = "You just downgraded your membership.  SAD!"
+   @user.wikis.each do |pub|
+   pub.update_attributes(private: false)
+  end
    redirect_to root_path
+  end
+  
+  def validate
+   render "charges/validate.html.erb"
   end
 end

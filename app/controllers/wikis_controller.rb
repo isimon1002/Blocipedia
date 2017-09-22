@@ -6,7 +6,8 @@ class WikisController < ApplicationController
    if current_user.admin? || current_user.premium?
      @wikis = Wiki.all
    elsif current_user.standard?
-     @wikis = Wiki.where(private: false || nil)
+     @wikis = Wiki.where(private: false)
+     @wikis += Wiki.where(private: nil)
    end
   end
 
@@ -26,8 +27,7 @@ class WikisController < ApplicationController
     @wiki.body = params[:wiki][:body]
     @wiki.private = params[:wiki][:private]
     @wiki.user = current_user
-    markdown(@wiki.title)
-    markdown(@wiki.body)
+
 
  # #10
     if @wiki.save

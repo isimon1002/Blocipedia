@@ -1,0 +1,7 @@
+<% if @wiki.user_id == current_user.id || current_user.admin? %>
+
+<div>
+  <%= link_to "Add Collaborator", new_wiki_collaborator_path, class: 'btn btn-info' %>
+</div>
+<% end %>
+	

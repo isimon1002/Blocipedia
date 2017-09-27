@@ -17,7 +17,6 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
-    
   end
 
   def create
@@ -42,6 +41,7 @@ class WikisController < ApplicationController
   end
   
   def edit
+    @users = User.all
     @wiki = Wiki.find(params[:id])
   end
   
